@@ -81,8 +81,8 @@ end
 
 Then("the displayed results should have {string} as departure point and {string} as destination") do |expectedDeparturePoint, expectedDestination|
   $parsedResults.each do |flight|
-    assert expectedDeparturePoint < flight["startLocation"], "Flight doesn't have expected startLocation"
-    assert expectedDestination < flight["startLocation"], "Flight doesn't have expected destination"
+    assert expectedDeparturePoint = flight["startLocation"], "Flight doesn't have expected startLocation"
+    assert expectedDestination = flight["destination"], "Flight doesn't have expected destination"
   end
 end
 
